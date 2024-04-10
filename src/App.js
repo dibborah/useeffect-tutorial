@@ -1,10 +1,9 @@
-import ExampleUseEffect from "./ExampleUseEffect";
+import ExampleFetchData from "./ExampleFetchData";
 
 const App = () => {
   return (
     <div>
-      <ExampleUseEffect />
-      
+    <ExampleFetchData />
     </div>
   );
 };
