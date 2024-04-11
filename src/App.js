@@ -1,8 +1,14 @@
 import { useState } from "react";
-import CleanupFunctionDemo from "./CleanupFunctionDemo";
+import MouseMoveEvent from "./MouseMoveEvent";
+
+// clean up fc
+
+// events
+// adding event listeners
 
 const App = () => {
   const [showComponent, setShowComponent] = useState(true);
+
   return (
     <div>
       <label htmlFor="showComponent">Show Component</label>
@@ -13,7 +19,7 @@ const App = () => {
         checked={showComponent}
         onChange={() => setShowComponent((prevCheck) => !prevCheck)}
       />
-      {showComponent && <CleanupFunctionDemo />}
+      {showComponent && <MouseMoveEvent />}
     </div>
   );
 };

@@ -1,12 +1,14 @@
-    function User({address, company, email, id, name, phone, username, website }) {
+function User({ address, company, email, id, name, phone, username, website }) {
   return (
-    <div style={{
+    <div
+      style={{
         padding: "1rem",
-        margin:"1rem",
-        backgroundColor:"#000",
-        color:"#efefef",
-        textAlign:"center"
-    }}>
+        margin: "1rem",
+        backgroundColor: "#000",
+        color: "#efefef",
+        textAlign: "center",
+      }}
+    >
       <h4>id: {id}</h4>
       <h4>name: {name}</h4>
       <h4>phone: {phone}</h4>
