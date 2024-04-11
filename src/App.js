@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ExampleFetchDataInStrictMode from "./ExampleFetchDataInStrictMode";
 import CleanupFunctionDemo from "./CleanupFunctionDemo";
+import UserForm from "./UserForm";
 
 // clean up fc
 
@@ -20,7 +21,7 @@ const App = () => {
         checked={showComponent}
         onChange={() => setShowComponent((prevCheck) => !prevCheck)}
       />
-      {showComponent && <ExampleFetchDataInStrictMode />}
+      {showComponent && <UserForm />}
     </div>
   );
 };
