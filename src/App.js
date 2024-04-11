@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MouseMoveEvent from "./MouseMoveEvent";
+import ExampleFetchData from "./ExampleFetchData";
 
 // clean up fc
 
@@ -19,7 +19,7 @@ const App = () => {
         checked={showComponent}
         onChange={() => setShowComponent((prevCheck) => !prevCheck)}
       />
-      {showComponent && <MouseMoveEvent />}
+      {showComponent && <ExampleFetchData />}
     </div>
   );
 };

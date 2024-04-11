@@ -31,7 +31,7 @@ const ExampleFetchData = () => {
   //   }
 
   // using arraw function
-  const fetchData = async () => {
+  const fetchData = async (url, obj) => {
     setIsLoading(true);
     // using promises
 
@@ -44,7 +44,9 @@ const ExampleFetchData = () => {
     //   });
 
     // using async await
-    const response = await fetch(URL);
+
+
+    const response = await fetch(url, obj);
     console.log(response);
     if(!(response.status >= 200 && response.status < 300)){
       setIsError(true);
@@ -53,6 +55,7 @@ const ExampleFetchData = () => {
       return;// Write return statement if you do not want to excute the further code in the function if the if condition is true
     }
     const data = await response.json();
+    console.log(data);
     console.log("Executed response.json()");
     setUsers(data);
     console.log("Executed setUser()");
@@ -62,7 +65,16 @@ const ExampleFetchData = () => {
     console.log("Executed setTimeout");
   };
   useEffect(() => {
-    fetchData();
+    // 3rd useCase of using useEffect (using cleanup fc)
+    // Aborting network request
+    const controller = new AbortController();
+    const signal = controller.signal;
+    
+    fetchData(URL, {signal: signal} );
+    return () => {
+      console.log("Aborting request ...");
+      controller.abort();
+    }
   }, []); // empty dependency => useEffect ek bar hi call hoga initial render ke baad
 
   if (isLoading) {
